@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+body,
+#root {
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(43, 43, 43);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Blackjack {
+	height: 60%;
+	width: 60%;
+	background-color: #993366;
+	border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Blackjack h1 {
+	text-align: center;
+	color: beige;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Display {
+	margin: 1rem;
+	padding: 2rem;
+	background-color: lightblue;
+	height: 2rem;
+	text-align: center;
+	border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.GameArea {
+	margin: 1rem;
+	height: 40%;
+	background-color: lightgreen;
+	border-radius: 5px;
+	display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.InputArea {
+	display: flex;
+	justify-content: center;
+}
+
+.GameButton {
+	width: 5rem;
+	height: 3rem;
+	margin: 1rem;
+	border-radius: 5px;
+	background-color: transparent;
+	color: greenyellow;
+	border: 2px solid greenyellow;
+}
+
+.Card {
+	height: 6rem;
+	width: 4rem;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
