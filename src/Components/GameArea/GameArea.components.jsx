@@ -6,7 +6,12 @@ const GameArea = ({ cardsPlayed }) => {
 	return (
 		<div className='GameArea'>
 			{cardsPlayed.map((item, index) => (
-				<Card suit={item.suit} value={item.value} key={index + Math.random()} />
+				<Card
+					suit={item.suit}
+					value={item.value}
+					image={item.image}
+					key={index + Math.random()}
+				/>
 			))}
 		</div>
 	);
