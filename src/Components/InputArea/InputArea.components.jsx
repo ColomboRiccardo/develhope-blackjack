@@ -6,7 +6,10 @@ export default class InputArea extends Component {
 		return (
 			<div className='InputArea'>
 				<GameButton addCard={this.props.addCard} />
-				<GameButton addCard={this.props.addCard} />
+				<GameButton setPlayerTurn={this.props.setPlayerTurn} />
+				{this.props.gameState === 'losing' && (
+					<GameButton resetGame={this.props.resetGame} />
+				)}
 			</div>
 		);
 	}

@@ -2,7 +2,7 @@ import CardList from './cards.json';
 
 export function randomCard() {
 	const myCard = CardList[Math.floor(Math.random() * CardList.length)];
-	console.log(myCard);
+	//console.log(myCard);
 	return myCard;
 }
 
@@ -32,4 +32,25 @@ export const valueForCards = valueOfACard => {
 		return 10;
 	if (valueOfACard === 'A') return 1;
 	return valueOfACard;
+};
+
+export const croupier = (houseCards, setHouseCards, cardsSum, setGameState) => {
+	console.log(houseCards, cardsSum);
+	for (let i = 0; i < 20; i++) {
+		const houseCardsSum = houseCards.reduce(
+			(sum, item) => sum + valueForCards(item.value),
+			0
+		);
+		if (houseCardsSum < cardsSum && houseCardsSum < 21) {
+			setHouseCards([...houseCards, randomCard()]);
+		}
+		if (houseCardsSum >= cardsSum && houseCardsSum <= 21) {
+			setGameState('losing');
+			i += 20;
+		}
+		if (houseCardsSum > 21) {
+			setGameState('winning');
+			i += 20;
+		}
+	}
 };
